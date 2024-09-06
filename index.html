@@ -8,23 +8,30 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 20px;
-            padding: 20px;
+            margin: 10px; /* Reduced margin */
+            padding: 10px;
         }
         h1 {
             text-align: center;
         }
         .lyrics {
-            margin-top: 20px;
+            margin-top: 10px; /* Reduced top margin for lyrics */
             line-height: 1.6;
             background-color: #ffffff;
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        table {
+            width: 100%;
+            margin-top: 10px; /* Reduced margin above the table */
+        }
+        td {
+            vertical-align: top;
+            padding: 10px;
+            width: 50%;
+        }
         button {
-            display: block;
-            margin: 20px auto;
             padding: 10px 20px;
             font-size: 16px;
             background-color: #4CAF50;
@@ -40,10 +47,15 @@
             display: block;
             margin: 20px auto;
         }
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
         .progress-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
+            width: 80%; /* Reduced width of the progress bar to fit alongside button */
+            max-width: 500px;
         }
         .progress-bar {
             width: 100%;
@@ -53,35 +65,43 @@
 <body>
     <audio id="rulessong" src="rulessong.mp3"></audio>
 
-    <button onclick="togglePlayPause()">Play/Pause Song</button>
-
-    <div class="progress-container">
-        <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" value="0" step="1" oninput="seekSong()">
+    <div class="controls">
+        <button onclick="togglePlayPause()">Play/Pause Song</button>
+        <span class="progress-container">
+            <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" value="0" step="1" oninput="seekSong()">
+        </span>
     </div>
 
     <div class="lyrics">
-        <p><strong>Verse 1</strong><br>
-        Blazers on. jackets coats off. uniforms tuck in.<br>
-        Be on time, bring a note if you're late today.<br>
-        Exercise book in hand, every single class.<br>
-        Hands off tools, wait till teacher's permission.</p>
+        <table>
+            <tr>
+                <td>
+                    <p><strong>Verse 1</strong><br>
+                    Blazers on. jackets coats off. uniforms tuck in.<br>
+                    Be on time, bring a note if you're late today.<br>
+                    Exercise book in hand, every single class.<br>
+                    Hands off tools, wait till teacher's permission.</p>
 
-        <p><strong>Chorus</strong><br>
-        Health and safety first, keep it all in line.<br>
-        Follow given instructions, you’ll be fine.<br>
-        Always do your best, even when it’s tough.<br>
-        Polite and respectful, that’s the courteous charm.</p>
+                    <p><strong>Chorus</strong><br>
+                    Health and safety first, keep it all in line.<br>
+                    Follow given instructions, you’ll be fine.<br>
+                    Always do your best, even when it’s tough.<br>
+                    Polite and respectful, that’s the courteous charm.</p>
+                </td>
+                <td>
+                    <p><strong>Verse 2</strong><br>
+                    Raise your hand up high, before you speak.<br>
+                    If you don’t understand, ask the teacher, don’t be meek.<br>
+                    Listen when others' sharing to class, don’t interrupt the flow.<br>
+                    Respect others and they'll do the same to you.</p>
 
-        <p><strong>Verse 2</strong><br>
-        Raise your hand up high, before you speak.<br>
-        If you don’t understand, ask the teacher, don’t be meek.<br>
-        Listen when others' sharing to class, don’t interrupt the flow.<br>
-        Respect others and they'll do the same to you.</p>
-
-        <p><strong>Bridge</strong><br>
-        Homework’s done on time, don’t leave it to the end.<br>
-        Only water in class, no food, my friend.<br>
-        Follow these rules every DT lesson, you and everyone in class will learn better and have more fun!</p>
+                    <p><strong>Bridge</strong><br>
+                    Homework’s done on time, don’t leave it to the end.<br>
+                    Only water in class, no food, my friend.<br>
+                    Follow these rules every DT lesson, you and everyone in class will learn better and have more fun!</p>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <script>
